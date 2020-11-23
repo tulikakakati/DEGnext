@@ -1,1 +1,1 @@
-# DEGNext
+# DEGnext
