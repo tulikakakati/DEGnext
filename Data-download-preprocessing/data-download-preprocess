@@ -1,48 +1,14 @@
+#DEGnext 
+#Copyright Tulika Kakati 2020 
+#Distributed under GPL v3 open source license
+#This code may be used to download and preprocessingcancer datasets from TCGA portal. 
+
+############################################
 CancerProject=c("TCGA-BRCA","TCGA-KIRC","TCGA-UCEC","TCGA-LUAD","TCGA-THCA","TCGA-LUSC","TCGA-PRAD","TCGA-BLCA","TCGA-STAD","TCGA-LIHC","TCGA-READ","TCGA-ESCA","TCGA-THCA","TCGA-HNSC","TCGA-COAD")
 library("TCGAbiolinks")
 library("SummarizedExperiment")
 memory.limit(150000000000)
-samples_size_matrix=matrix(0,nrow=length(CancerProject),ncol=2)
-for(i in 1:length(CancerProject)){
-
-		Project=CancerProject[i]				  
-		query <- GDCquery(project = Project,
-						  data.category = "Transcriptome Profiling",
-						  data.type = "Gene Expression Quantification", 
-						  workflow.type = "HTSeq - Counts",
-						  sample.type = c("Primary Tumor","Solid Tissue Normal"),
-						  legacy = FALSE)
-
-		GDCdownload(query,method = "api",files.per.chunk = 150)
-
-		cat("data preparation starts......\n")
-		# Prepare expression matrix with geneID in the rows and samples (barcode) in the columns
-		# rsem.genes.results as values
-		BRCARnaseqSE <- GDCprepare(query,
-								save = FALSE, 
-								summarizedExperiment = TRUE)
-
-		cat("data preparation ends......\n")
-		
-		
-		BRCAMatrix <- assay(BRCARnaseqSE,"HTSeq - Counts") # or BRCAMatrix <- assay(BRCARnaseqSE,"raw_count")
-		dim(BRCAMatrix) #
-
-		
-		group1 <- TCGAquery_SampleTypes(colnames(BRCAMatrix), typesample = c("NT"))
-		group2 <- TCGAquery_SampleTypes(colnames(BRCAMatrix), typesample = c("TP"))
-		length(group1)
-		length(group2)
-		samples_size_matrix[i,1]=length(group1)
-		samples_size_matrix[i,2]=length(group2)
-		samples_size_matrix
-		}
-		rownames(samples_size_matrix)=CancerProject
-		colnames(samples_size_matrix)=c("normal-sample-size","tumor-sample-size")
-		write.table(samples_size_matrix,"samples_size_matrix.csv",sep=",",col.names=NA)
-
 		for(i in 1:length(CancerProject)){
-
 		Project=CancerProject[i]				  
 		query <- GDCquery(project = Project,
 						  data.category = "Transcriptome Profiling",
@@ -79,10 +45,7 @@ for(i in 1:length(CancerProject)){
 
 		dim(BRCARnaseq_CorOutliers) 
 		cat("data preprocessing ends......\n")
-		File=sprintf("E:\\Research\\10th-sem\\DEGnext\\Implementation\\Data-preprocessing\\%s_data_after_preprocessing.RData",Project)
 		
-		save.image(File)
-		cat("data saved after preprocessing.....\n")
 		library("biomaRt")
 		mart <- useMart("ENSEMBL_MART_ENSEMBL")#use this or the below command as and when required
 		#ensembl = useEnsembl(biomart = "ensembl", dataset = "hsapiens_gene_ensembl", mirror = "useast")
@@ -100,10 +63,10 @@ for(i in 1:length(CancerProject)){
 		genes=genes[!is.na(genes)]
 		length(genes)
 		valid_genes=as.character()
-		for(i in 1:length(genes)){
-			d=nchar(genes[i])
+		for(i in j:length(genes)){
+			d=nchar(genes[j])
 			if(d>0){
-				valid_genes=c(valid_genes,genes[i])
+				valid_genes=c(valid_genes,genes[j])
 			}
 		}
 		length(valid_genes)#
