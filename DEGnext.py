@@ -1,3 +1,10 @@
+#DEGnext 
+#Copyright Tulika Kakati 2020 
+#Distributed under GPL v3 open source license
+#This code may be used to test the DEGNextModel.pth on new datasets.
+
+############################################
+
 import torch
 import torch.nn as nn
 import numpy as np
