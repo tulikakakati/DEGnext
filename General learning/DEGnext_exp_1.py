@@ -1,7 +1,7 @@
 #DEGnext 
 #Copyright Tulika Kakati 2020 
 #Distributed under GPL v3 open source license
-#This code may be used to train and test the model for all the cancer datatsets and save the model for each cancer dataset.
+#This code may be used to train and test the model on T1 and T2 data for all the cancer datatsets and save the model for each cancer dataset.
 ##################################
 
 import torch
