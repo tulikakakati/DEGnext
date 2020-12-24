@@ -1,7 +1,7 @@
 #DEGnext
 #Copyright Tulika Kakati 2020
 #Distributed under GPL v3 open source license
-#This code may be used in DEGnext.py main file for transforming the datasets
+#This code may be used in DEGnext.py main file to transform the cancer RNA-seq datasets
 ##############################################################
 from torch.utils.data import Dataset
 from sklearn.preprocessing import StandardScaler

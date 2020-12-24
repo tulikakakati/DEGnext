@@ -1,3 +1,8 @@
+#DEGnext 
+#Copyright Tulika Kakati, 2020 
+#Distributed under GPL v3 license
+#This code may be used to import cancer RNA-seq dataset(s) into Pytorch DataLoader
+
 from torch.utils.data import Dataset
 import numpy as np
 from sklearn.preprocessing import Normalizer

@@ -1,7 +1,7 @@
 #DEGnext 
-#Copyright Tulika Kakati 2020 
-#Distributed under GPL v3 open source license
-#This code may be used to download and preprocessingcancer datasets from TCGA portal. 
+#Copyright Tulika Kakati, 2020 
+#Distributed under GPL v3 license
+#This code may be used to download and preprocess cancer RNA-seq datasets from TCGA portal. 
 
 ############################################
 CancerProject=c("TCGA-BRCA","TCGA-KIRC","TCGA-UCEC","TCGA-LUAD","TCGA-THCA","TCGA-LUSC","TCGA-PRAD","TCGA-BLCA","TCGA-STAD","TCGA-LIHC","TCGA-READ","TCGA-ESCA","TCGA-THCA","TCGA-HNSC","TCGA-COAD")

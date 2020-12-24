@@ -1,7 +1,7 @@
 #DEGnext
 #Copyright Tulika Kakati 2020
 #Distributed under GPL v3 open source license
-#This code may be used in DEGnext.py main file for loadng the datasets
+#This code may be used in DEGnext.py main file for loadng the cancer RNA-seq datasets into Pytorch Dataloader
 ##############################################################
 from torch.utils.data import Dataset
 import numpy as np
