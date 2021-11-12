@@ -61,7 +61,7 @@ function to fine tune the model again with the F1 data for all 9 training datase
 pretrained model as a feature extractor and leveraged the knowledge acquired from the trained
 model to predict UR and DR genes from bio-test data of 8 untrained datasets.
 # Pre-requisites to run DEGnext
-1. Please download the "DEGnext" folder. Unzip the folder and inside "DEGnext " folder, there are three sub-folders: one as "general-learning", one as
+1. Please download the "DEGnext" folder. Unzip the folder and inside this, there are three sub-folders: one as "general-learning", one as
 "transfer-learning" and the third one as "test-case".
 3. For general learning, in the terminal window, type “python DEGnext _exp_1.py”. To run the second experiment, type “python
 DEGnext _exp_2.py”.
