@@ -61,20 +61,13 @@ function to fine tune the model again with the F1 data for all 9 training datase
 pretrained model as a feature extractor and leveraged the knowledge acquired from the trained
 model to predict UR and DR genes from bio-test data of 8 untrained datasets.
 # Pre-requisites to run DEGnext
-1. Please create a folder "DEGnext " in your preferred directory. Please download the "datasets"
-folder. Unzip the folder and copy the "datasets" folder to "DEGnext " folder.
-2. Inside "DEGnext " folder, create two sub-folders: one as "general-learning" and the other as
-"transfer-learning".
-3. For general learning, download and unzip the source files from Additional File 3 to "generallearning"
-folder. From a terminal window, go to the general-learning directory. To run the first
-experiment, type “python DEGnext _exp_1.py”. To run the second experiment, type “python
+1. Please download the "DEGnext" folder. Unzip the folder and inside "DEGnext " folder, there are three sub-folders: one as "general-learning", one as
+"transfer-learning" and the third one as "test-case".
+3. For general learning, in the terminal window, type “python DEGnext _exp_1.py”. To run the second experiment, type “python
 DEGnext _exp_2.py”.
-4. For transfer learning, download and unzip the source files from Additional File 4 to "transferlearning"
-folder. From a terminal window, go to the transfer-learning directory. To run the transfer
-learning, type “python DEGnext .py”.
+4. For transfer learning, in the terminal window, type “python DEGnext .py”.
 5. If you want to test the model on a two-class classification problem without training and finetuning,
-please download and unzip the source files from Additional File 5. From a terminal window,
-go to the test-case directory. To run DEGnext for an input file, type “python DEGnext .py”.
+please go to the test-case directory and in the terminal window, run DEGnext for an input file, type “python DEGnext .py”.
 # Output of DEGnext
 Here, I show the output of DEGnext .py using an example input file.
 The test result for the input dataset can be found in a file
